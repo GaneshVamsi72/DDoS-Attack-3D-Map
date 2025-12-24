@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DDos Attack Map</title>
+        <link rel="icon" type="image/svg+xml" href="/assets/shield-halved-solid-full.svg">
+        <style>
+            body {
+                margin: 0;
+                background: black;
+                color: white;
+                font-family: monospace;
+            }
+            #globe {
+                width: 100vw;
+                height: 100vh;
+            }
+            .title {
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                z-index: 10;
+            }
+            #clock {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1.16rem;
+                font-weight: bold;
+                color: #00ffff;
+                letter-spacing: 1px;
+                z-index: 10;
+            }
+            #dashboard {
+                width: 100%;
+                position: absolute;
+                bottom: 0px;
+                z-index: 10;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .panel {
+                padding: 10px;
+                flex: 1;
+                text-align: center;
+            }
+            .panel h3 {
+                font-size: 1rem;
+                color: #00ffff;
+            }
+            #countryTable {
+                margin: 0 auto;
+                width: 100%;
+            }
+            #highRiskList {
+                list-style: none;
+                overflow-y: auto;
+            }
+        </style>
+        <link rel="stylesheet" href="/css/tooltip.css">
+    </head>
+    <body>
+        <div class="title">
+            <h2>🌍 DDoS Attack Visualization</h2>
+            <p>Simulated Threat Intelligence</p>
+        </div>
+
+        <div id="clock"></div>
+
+        <div id="globe"></div>
+
+        <div id="dashboard">
+            <div class="panel">
+                <h3>Attack Summary</h3>
+                <p>Total Attacks: <span id="totalAttacks">0</span></p>
+                <p>High Risk: <span id="highCount">0</span></p>
+                <p>Medium Risk: <span id="mediumCount">0</span></p>
+                <p>Low Risk: <span id="lowCount">0</span></p>
+            </div>
+
+            <div class="panel">
+                <h3>Top Countries</h3>
+                <table id="countryTable">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h3>High Risk Attacks</h3>
+                <ul id="highRiskList"></ul>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/globe.gl"></script>
+        <script src="/js/globe.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+.globe-tooltip {
+  color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.globe-tooltip:hover {
+  cursor: pointer;
+}
+.high { color: red; }
+.medium { color: orange; }
+.low { color: lightgreen; }
