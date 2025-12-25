@@ -1,0 +1,10 @@
+1. Total Improvements
+2. Looping the Data Set?
+
+Python Conversion
+1. FAST API
+2. ML Logic Implementation
+
+Major Improvement - Bitdefender Cyberthreat Real-Time Map Inspired
+-> Periodically fetching traffic trends and attack spikes from Cloudfare, etc... and/or IPs from abuse IPDP.
+-> Classifying IPs with high DOS Confidence Score using ML, remote IPs to Coordinates.

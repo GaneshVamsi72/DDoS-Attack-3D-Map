@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
@@ -28,6 +28,11 @@ app.get('/', (req, res) => {
 
 app.get('/api/attacks', (req, res) => {
     res.json(enrichAttacks(fetchAttackFeed()));
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 app.listen(PORT, () => {
